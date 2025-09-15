@@ -1536,6 +1536,23 @@
         "disabled": false
       }
     },
+    "smart_directory": {
+      "$ref": "#/$defs/SmartDirectoryConfig",
+      "default": {
+        "format": "[$path]($style)[$read_only]($read_only_style) ",
+        "use_logical_path": true,
+        "repo_root_format": "[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$after_root_path]($after_repo_root_style)[$read_only]($read_only_style) ",
+        "style": "cyan bold",
+        "repo_root_style": null,
+        "before_repo_root_style": null,
+        "after_repo_root_style": null,
+        "disabled": true,
+        "read_only": "🔒",
+        "read_only_style": "red",
+        "home_symbol": "~",
+        "use_os_path_sep": true
+      }
+    },
     "solidity": {
       "$ref": "#/$defs/SolidityConfig",
       "default": {
@@ -5953,6 +5970,69 @@
         "disabled": {
           "type": "boolean",
           "default": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "SmartDirectoryConfig": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "type": "string",
+          "default": "[$path]($style)[$read_only]($read_only_style) "
+        },
+        "use_logical_path": {
+          "type": "boolean",
+          "default": true
+        },
+        "repo_root_format": {
+          "type": "string",
+          "default": "[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$after_root_path]($after_repo_root_style)[$read_only]($read_only_style) "
+        },
+        "style": {
+          "type": "string",
+          "default": "cyan bold"
+        },
+        "repo_root_style": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "before_repo_root_style": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "after_repo_root_style": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        },
+        "disabled": {
+          "type": "boolean",
+          "default": true
+        },
+        "read_only": {
+          "type": "string",
+          "default": "🔒"
+        },
+        "read_only_style": {
+          "type": "string",
+          "default": "red"
+        },
+        "home_symbol": {
+          "type": "string",
+          "default": "~"
+        },
+        "use_os_path_sep": {
+          "type": "boolean",
+          "default": true
         }
       },
       "additionalProperties": false

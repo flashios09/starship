@@ -92,6 +92,7 @@ pub const ALL_MODULES: &[&str] = &[
     "shell",
     "shlvl",
     "singularity",
+    "smart_directory",
     "solidity",
     "spack",
     "status",
